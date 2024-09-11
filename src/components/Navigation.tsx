@@ -8,8 +8,8 @@ const Naviagtion: React.FC = (): JSX.Element => {
                 <img src="./src/assets/logo.png" className='md:h-[32px] h-[24px]' />
             </div>
             <div className='hidden flex-row gap-[23px] md:text-[16px] text-[14px] xs:flex'>
-                <p>Galeria zdjęć</p>
-                <p>FaQ</p>
+                <a className='hover:text-mainDark text-black hover:opacity-80 hover:underline cursor-pointer' href="#gallery">Galeria zdjęć</a>
+                <p className='hover:text-mainDark hover:opacity-80 hover:underline cursor-pointer'>FaQ</p>
             </div>
             <Button text="Zadzwoń do nas" />
         </div>

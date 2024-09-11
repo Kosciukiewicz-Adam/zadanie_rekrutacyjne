@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 enum CarTypes {
-    PASSENGER_CAR = "passenger car",
-    VANS = "vans",
+    PASSENGER_CAR = "passenger",
+    VANS = "van",
 }
 
 interface DotProps {
@@ -16,7 +16,10 @@ interface DotProps {
 }
 
 interface Props {
-    images: string[];
+    images: {
+        passenger: string[],
+        van: string[],
+    };
 }
 
 
@@ -49,7 +52,7 @@ const Gallery: React.FC<Props> = ({ images }): JSX.Element => {
         arrows: false,
         variableWidth: true,
         adaptiveHeight: true,
-        focusOnSelect: true,
+        focusOnSelect: false,
         appendDots: dots => (
             <div>
                 <div className='flex flex-row justify-center gap-x-[10px] relative bottom-[-23px]'>
@@ -70,8 +73,8 @@ const Gallery: React.FC<Props> = ({ images }): JSX.Element => {
     }
 
     return (
-        <div className='w-full lg:px-[88px] px-[30px] lg:pt-[80px] pt-[30px] lg:pb-[152px] pb-[30px]'>
-            <div>
+        <div className='w-full lg:pl-[88px] pl-[30px] lg:pt-[80px] pt-[30px] lg:pb-[152px] pb-[30px]' id="gallery">
+            <div className='lg:pr-[88px] pr-[30px]'>
                 <p className='text-[21.5px] text-mainDark font-RobotoCondensed'>Prezentacja firmy</p>
                 <p className='font-BebasNeue text-[40px]'>ZOBACZ NASZĄ GALERIE ZDJĘĆ</p>
                 <div className='flex flex-row pt-[24px] gap-x-[24px]'>
@@ -87,7 +90,7 @@ const Gallery: React.FC<Props> = ({ images }): JSX.Element => {
             </div>
             <div className='md:pt-[88px] pt-[30px] h-[534px]'>
                 <Slider {...settings}>
-                    {images.map(imageSrc => createGalleryImage(imageSrc))}
+                    {images[selectedCarType].map(imageSrc => createGalleryImage(imageSrc))}
                 </Slider>
             </div >
         </div >
