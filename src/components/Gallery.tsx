@@ -25,17 +25,18 @@ const Gallery: React.FC<Props> = ({ images }): JSX.Element => {
 
     const createDot = (dot: DotProps): JSX.Element => {
         const isActive = dot.props.className.includes("slick-active");
+        const bgColorClass = isActive ? 'bg-mainDark' : 'bg-gray';
         return (
             <div
-                className={`size-[8px] rounded-full cursor-pointer hover:bg-mainDark hover:opacity-60  bg-${isActive ? 'mainDark' : '[#f1f1f1]'}`}
+                className={`size-[8px] rounded-full ${bgColorClass}`}
                 key={dot.key}
             />
         )
     }
 
     const createGalleryImage = (imageSrc: string) => (
-        <div className='w-[600px] mr-[48px] border-r-[48px] border-mainLight overflow-hidden' key={imageSrc}>
-            <img src={imageSrc} key={imageSrc} className="w-[660px] object-cover" />
+        <div className='!w-[664px] !h-[446px] border-r-[64px] box-border border-mainLight' key={imageSrc}>
+            <img src={imageSrc} key={imageSrc} className="w-full h-full object-cover" />
         </div>
     )
 
@@ -46,9 +47,12 @@ const Gallery: React.FC<Props> = ({ images }): JSX.Element => {
         slidesToShow: 2.05,
         slidesToScroll: 2,
         arrows: false,
+        variableWidth: true,
+        adaptiveHeight: true,
+        focusOnSelect: true,
         appendDots: dots => (
             <div>
-                <div className='flex flex-row justify-center gap-x-[10px]'>
+                <div className='flex flex-row justify-center gap-x-[10px] relative bottom-[-23px]'>
                     {dots.map(dot => createDot(dot))}
                 </div>
             </div>
@@ -66,7 +70,7 @@ const Gallery: React.FC<Props> = ({ images }): JSX.Element => {
     }
 
     return (
-        <div className='w-full lg:p-[120px] md:p-[100px] p-[30px]'>
+        <div className='w-full lg:px-[88px] px-[30px] lg:pt-[80px] pt-[30px] lg:pb-[152px] pb-[30px]'>
             <div>
                 <p className='text-[21.5px] text-mainDark font-RobotoCondensed'>Prezentacja firmy</p>
                 <p className='font-BebasNeue text-[40px]'>ZOBACZ NASZĄ GALERIE ZDJĘĆ</p>
@@ -81,7 +85,7 @@ const Gallery: React.FC<Props> = ({ images }): JSX.Element => {
                     >Samochody dostawcze</p>
                 </div>
             </div>
-            <div className='md:py-[80px] py-[30px]'>
+            <div className='md:pt-[88px] pt-[30px] h-[534px]'>
                 <Slider {...settings}>
                     {images.map(imageSrc => createGalleryImage(imageSrc))}
                 </Slider>

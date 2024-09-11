@@ -13,7 +13,8 @@ export default {
     colors: {
       "mainDark": "#0147FF",
       "mainLight": "#F7F7F7",
-      "white": "#fff"
+      "white": "#fff",
+      "gray": "#f1f1f1"
     },
     screens: {
       'xs': "540px",

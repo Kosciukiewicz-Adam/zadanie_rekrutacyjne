@@ -3,7 +3,7 @@ import Button, { ButtonType } from "../elements/Button";
 
 const Baner: React.FC = (): JSX.Element => {
     return (
-        <div className='w-full flex flex-col xl:h-[820px] lg:h-[720px] sm:h-[650px] xs:h-[520px] h-[420px] relative'>
+        <div className='w-full flex flex-col xl:h-[825px] lg:h-[700px] sm:h-[650px] xs:h-[520px] h-[425px] relative'>
             <div className='lg:p-[120px] sm:p-[100px] p-[30px] flex flex-col sm:items-start items-center'>
                 <div className='font-BebasNeue lg:text-[76px] md:text-[64px] sm:text-[50px] text-[36px]'>
                     <p className='lg:leading-[80px] leading-none'>Sprzedajemy samochody</p>
@@ -17,7 +17,6 @@ const Baner: React.FC = (): JSX.Element => {
                     <Button text='Zobacz zdjęcia' />
                     <Button text='Zadzwoń do nas' type={ButtonType.SECONDARY} />
                 </div>
-                <img src="./src/assets/cars.png" className='lg:w-3/4 w-5/6 absolute right-0 bottom-0' />
             </div>
         </div>
     )

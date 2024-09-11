@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({ text, type = ButtonType.PRIMARY }): JSX.Element => {
-    let buttonClass = "rounded-md pt-[12px] pb-[12px] pl-[24px] pr-[24px] font-semibold cursor-pointer hover:opacity-60 hover:bg-mainDark md:text-[16px] sm:text-[14px] text-[12px] hover:text-white";
+    let buttonClass = "rounded-md pt-[12px] pb-[12px] pl-[24px] pr-[24px] font-semibold cursor-pointer hover:opacity-60 hover:bg-mainDark md:text-[16px] sm:text-[14px] text-[12px] hover:text-white whitespace-nowrap";
 
     if (type === ButtonType.PRIMARY) {
         buttonClass += " bg-mainDark text-white";

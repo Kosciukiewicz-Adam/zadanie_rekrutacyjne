@@ -18,7 +18,8 @@ const App: React.FC = (): JSX.Element => {
   ];
 
   return (
-    <div className='w-full bg-mainLight h-full bg-[url("./src/assets/lines.png")] bg-no-repeat bg-right-top font-RobotoFlex'>
+    <div className='w-full bg-mainLight h-full bg-no-repeat bg-right-top font-RobotoFlex relative'>
+      <img src="./src/assets/cars2.png" className='absolute right-0 top-0 w-9/12 2xl:w-7/12' />
       <Navigation></Navigation>
       <Baner></Baner>
       <Gallery images={galleryImages}></Gallery>
