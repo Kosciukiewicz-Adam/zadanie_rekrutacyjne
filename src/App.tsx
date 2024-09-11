@@ -7,8 +7,8 @@ import Footer from './components/Footer'
 const App: React.FC = (): JSX.Element => {
   const galleryImages = {
     passenger: [
-      "./src/assets/slider-car1.png",
       "./src/assets/slider-car3.png",
+      "./src/assets/slider-car1.png",
       "./src/assets/slider-car2.png",
       "./src/assets/slider-car1.png",
       "./src/assets/slider-car3.png",
@@ -29,7 +29,7 @@ const App: React.FC = (): JSX.Element => {
 
   return (
     <div className='w-full bg-mainLight h-full bg-no-repeat bg-right-top font-RobotoFlex relative'>
-      <img src="./src/assets/background.png" className='absolute right-0 top-0 w-9/12 2xl:w-7/12' />
+      <img src="./src/assets/background.png" className='absolute right-0 top-0 2xl:w-7/12 xl:w-9/12 md:w-11/12 w-10/12 md:visible invisible' />
       <Navigation></Navigation>
       <Baner></Baner>
       <Gallery images={galleryImages}></Gallery>

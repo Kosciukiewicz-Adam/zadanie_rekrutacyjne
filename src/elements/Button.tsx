@@ -16,7 +16,7 @@ const Button: React.FC<Props> = ({ text, type = ButtonType.PRIMARY }): JSX.Eleme
     if (type === ButtonType.PRIMARY) {
         buttonClass += " bg-mainDark text-white";
     } else {
-        buttonClass += " border-solid-mainDark border-[1px] text-mainDark";
+        buttonClass += " border-solid-mainDark border-[1px] text-mainDark bg-white";
     }
 
     return (

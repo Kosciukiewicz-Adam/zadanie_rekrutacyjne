@@ -38,7 +38,7 @@ const Gallery: React.FC<Props> = ({ images }): JSX.Element => {
     }
 
     const createGalleryImage = (imageSrc: string) => (
-        <div className='!w-[664px] !h-[446px] border-r-[64px] box-border border-mainLight' key={imageSrc}>
+        <div className='lg:border-r-[64px] md:border-r-[34px] border-r-[12px] box-border border-mainLight' key={imageSrc}>
             <img src={imageSrc} key={imageSrc} className="w-full h-full object-cover" />
         </div>
     )
@@ -50,8 +50,6 @@ const Gallery: React.FC<Props> = ({ images }): JSX.Element => {
         slidesToShow: 2.05,
         slidesToScroll: 2,
         arrows: false,
-        variableWidth: true,
-        adaptiveHeight: true,
         focusOnSelect: false,
         appendDots: dots => (
             <div>
@@ -73,7 +71,7 @@ const Gallery: React.FC<Props> = ({ images }): JSX.Element => {
     }
 
     return (
-        <div className='w-full lg:pl-[88px] pl-[30px] lg:pt-[80px] pt-[30px] lg:pb-[152px] pb-[30px]' id="gallery">
+        <div className='w-full lg:pl-[88px] pl-[30px] lg:pt-[80px] pt-[30px] lg:pb-[152px] pb-[80px]' id="gallery">
             <div className='lg:pr-[88px] pr-[30px]'>
                 <p className='text-[21.5px] text-mainDark font-RobotoCondensed'>Prezentacja firmy</p>
                 <p className='font-BebasNeue text-[40px]'>ZOBACZ NASZĄ GALERIE ZDJĘĆ</p>
@@ -88,7 +86,7 @@ const Gallery: React.FC<Props> = ({ images }): JSX.Element => {
                     >Samochody dostawcze</p>
                 </div>
             </div>
-            <div className='md:pt-[88px] pt-[30px] h-[534px]'>
+            <div className='md:pt-[88px] pt-[30px]'>
                 <Slider {...settings}>
                     {images[selectedCarType].map(imageSrc => createGalleryImage(imageSrc))}
                 </Slider>
