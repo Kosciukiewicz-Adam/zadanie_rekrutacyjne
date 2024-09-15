@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import arrow from "../assets/arrow-down.svg";
 
 interface Props {
     buttonText: string;
@@ -22,7 +23,7 @@ const Paragraph: React.FC<Props> = ({ header, text, buttonText }): JSX.Element =
             <p className='text-[14px] font-RobotoCondensed'>{textToDisplay.join(" ")}</p>
             <div className='text-[14px] font-RobotoCondensed pt-[24px] flex flex-row items-center cursor-pointer' onClick={() => setIsDrawerOpen(prev => !prev)}>
                 <p>{buttonText}</p>
-                <img src="./src/assets/arrow-down.svg" className={`h-[12.5px] ml-[6px] ${isDrawerOpen ? "rotate-180" : ""}`} />
+                <img src={arrow} className={`h-[12.5px] ml-[6px] ${isDrawerOpen ? "rotate-180" : ""}`} />
             </div>
         </div>
     )
